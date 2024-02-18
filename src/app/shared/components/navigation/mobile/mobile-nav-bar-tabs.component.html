@@ -9,7 +9,8 @@
     label="Public"
     (mobileNavBarTabClick)="onMobileNavBarTabClick($event)"
   ></app-mobile-nav-bar-tab>
-  <app-mobile-nav-bar-tab
+  <ng-container *ngIf="isAuthenticated$ | async">
+    <app-mobile-nav-bar-tab
     path="/protected"
     label="Protected"
     (mobileNavBarTabClick)="onMobileNavBarTabClick($event)"
@@ -19,4 +20,6 @@
     label="Admin"
     (mobileNavBarTabClick)="onMobileNavBarTabClick($event)"
   ></app-mobile-nav-bar-tab>
+  </ng-container>
+ 
 </div>
